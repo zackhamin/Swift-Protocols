@@ -6,8 +6,8 @@
 //  Copyright © 2020 Ishaq Amin. All rights reserved.
 //
 
-protocol <#name#> {
-    <#requirements#>
+protocol canFly {
+    func fly()
 }
 
 class Bird {
@@ -20,12 +20,13 @@ class Bird {
         }
     }
     
-    func fly(){
-        print("The bird flaps its wings and flys")
-    }
 }
     
-class Eagle:Bird{
+class Eagle:Bird,canFly{
+    func fly() {
+        print("The eagle flaps its wings and lifts off into the sky")
+    }
+    
     func soar(){
         print("The eagle glides in the air using air currents")
     }
@@ -38,30 +39,25 @@ class Penguin: Bird{
 }
 
 struct FlyingMuseum{
-    func flyingDemo(flyingObject:Bird) {
+    func flyingDemo(flyingObject:canFly) {
         flyingObject.fly()
     }
 }
 
-class Airplane : Bird {
-    
+struct Airplane : canFly{
+    func fly() {
+        print("The airplane uses its engine to life off into the air")
+    }
     
 }
 
 
 
 let myEagle = Eagle()
-//myEagle.fly()
-//myEagle.layEgg()
-//myEagle.soar()
-
 let myPenguin = Penguin()
-//myPenguin.layEgg()
-//myPenguin.swim()
-//myPenguin.fly()
-
-
 let myPlane = Airplane()
+myEagle.fly()
+myPlane.fly()
 
 let museum = FlyingMuseum()
 museum.flyingDemo(flyingObject: myPlane)
