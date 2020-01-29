@@ -6,6 +6,10 @@
 //  Copyright © 2020 Ishaq Amin. All rights reserved.
 //
 
+protocol <#name#> {
+    <#requirements#>
+}
+
 class Bird {
     
     var isFemale = true
@@ -27,7 +31,37 @@ class Eagle:Bird{
     }
 }
 
+class Penguin: Bird{
+    func swim(){
+        print("The penguin swims")
+    }
+}
+
+struct FlyingMuseum{
+    func flyingDemo(flyingObject:Bird) {
+        flyingObject.fly()
+    }
+}
+
+class Airplane : Bird {
+    
+    
+}
+
+
 
 let myEagle = Eagle()
-myEagle.fly()
-myEagle.layEgg()
+//myEagle.fly()
+//myEagle.layEgg()
+//myEagle.soar()
+
+let myPenguin = Penguin()
+//myPenguin.layEgg()
+//myPenguin.swim()
+//myPenguin.fly()
+
+
+let myPlane = Airplane()
+
+let museum = FlyingMuseum()
+museum.flyingDemo(flyingObject: myPlane)
