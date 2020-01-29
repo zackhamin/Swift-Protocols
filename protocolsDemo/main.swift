@@ -6,7 +6,3 @@
 //  Copyright © 2020 Ishaq Amin. All rights reserved.
 //
 
-import Foundation
-
-print("Hello, World!")
-
